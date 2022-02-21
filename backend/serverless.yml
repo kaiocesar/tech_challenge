@@ -1,0 +1,21 @@
+service: sls-graphql-api-backend
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  versionFunctions: false
+  region: us-east-1
+  apiGateway:
+    shouldStartNameWithService: true
+
+functions:
+  grapql:
+    handler: src/graphql.handler
+    events:
+      - http:
+          path: graph
+          method: any
+          cors: true
