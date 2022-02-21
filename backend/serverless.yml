@@ -13,7 +13,7 @@ provider:
 
 functions:
   grapql:
-    handler: src/graphql.handler
+    handler: built/graphql.handler
     events:
       - http:
           path: graph
